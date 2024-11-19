@@ -1,7 +1,15 @@
 import React from 'react';
 import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = ({ className }) => {
+
+  const navigate = useNavigate()
+
+  const handleOnClick = () => {
+    navigate('/login')
+  }
+
   const handleBack = () => {
     window.history.back();
   };
@@ -31,15 +39,12 @@ const Navbar = ({ className }) => {
         </button>
       </div>
 
-      {/* Botones */}
-      <div className="flex items-center gap-x-5">{/* Aquí podrías agregar más botones si es necesario */}</div>
-
       {/* Botones de acción */}
       <div className="flex items-center gap-x-5">
-        <button className="w-fit text-neutral-400 text-sm font-semibold hover:scale-105 ease-in-out duration-100">
+        <button onClick={handleOnClick} className="w-fit text-neutral-400 text-sm font-semibold hover:scale-105 ease-in-out duration-100">
           Registrarse 
         </button>
-        <button className="w-fit px-8 h-12 rounded-full bg-neutral-50 text-base text-neutral-900 font-semibold flex items-center justify-center hover:scale-105 ease-in-out duration-100">
+        <button onClick={handleOnClick} className="w-fit px-8 h-12 rounded-full bg-neutral-50 text-base text-neutral-900 font-semibold flex items-center justify-center hover:scale-105 ease-in-out duration-100">
           Iniciar sesion
         </button>
       </div>

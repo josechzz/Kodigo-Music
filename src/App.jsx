@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Main from './pages/main/Main'
+import Login from './components/login/Login'
+
 
 function App() {
   return (
@@ -9,6 +11,7 @@ function App() {
           {/*aqui iran las rutas*/}
           <Routes>
             <Route exact path='/' element={<Main />}></Route>
+            <Route path='/login' element={<Login />} />
             </Routes> 
         </div>
       </Router>
